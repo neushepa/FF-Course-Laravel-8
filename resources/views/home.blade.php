@@ -3,7 +3,10 @@
 @section('content')
 <div class="card">
   <div class="card-body">
-    <h1><center>{{ $greeting }}</center></h1>
-  </div>
+    <div class="alert alert-success" role="alert">
+    {{ session('status') }}
+    <center><h1>Fathforce Starter Kits 2021</h1></center>
+    </div>
+</div>
 </div>
 @endsection

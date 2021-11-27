@@ -34,3 +34,16 @@ Route::get('/about', function () {
     ];
     return view('about',$data);
 });
+
+Route::get('/credit', function () {
+    $data = [
+        'title' => 'Credits',
+        'body' => 'Herzlich Willkommen',
+
+    ];
+    return view('admin.credit',$data);
+});
+
+Auth::routes();
+
+Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');

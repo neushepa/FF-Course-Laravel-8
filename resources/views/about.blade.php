@@ -10,9 +10,10 @@
             <center><h5>{{ $name }}</h5></center>
             <center><h5>{{ $email }}</h5></center>
         </div>
+        </div>
     </div>
 </div>
-
+</div>
 @endsection
 
 
