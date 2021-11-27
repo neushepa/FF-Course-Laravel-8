@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <title>Layout &rsaquo; Default &mdash; Starter Kits</title>
+  <title>Dashboard Starter Kits Pro</title>
 
   <!-- General CSS Files -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -14,6 +14,10 @@
   <!-- Template CSS -->
   <link rel="stylesheet" href="../../admin/assets/css/style.css">
   <link rel="stylesheet" href="../../admin/assets/css/components.css">
+
+  <!-- Datatables -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+
 </head>
 
 <body>
@@ -44,6 +48,11 @@
   <script src="../../admin/assets/js/scripts.js"></script>
   <script src="../../admin/assets/js/custom.js"></script>
 
+  <!-- Datatables -->
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+
   <!-- Page Specific JS File -->
+
+  @yield('script')
 </body>
 </html>

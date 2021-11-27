@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
 use App\Models\Post;
-class PostController extends Controller
+use Illuminate\Http\Request;
+
+class BlogController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,12 +13,12 @@ class PostController extends Controller
      */
     public function index()
     {
-            $data = [
-                'title' => 'List Post',
-                'posts' => post::get()
-                //'route' => route('post.create')
-            ];
-            return view('admin.post.index',$data);
+        $data = [
+            'title' => 'Blog List',
+            'post' => Post::get()
+        ];
+        //dd($data);
+        return view('/blog',$data);
     }
 
     /**
@@ -28,7 +28,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        dd('create post form');
+        //
     }
 
     /**
@@ -48,14 +48,14 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($slug)
+    public function show($id)
     {
-            $data = [
-                'title' => 'Post Detail',
-                'post' => Post::where('slug',$slug)->first()
-            ];
-            //dd($data);
-            return view('/post',$data);
+        $data = [
+            'title' => 'Post Detail',
+            'post' => Post::where('slug',$slug)->first()
+        ];
+        //dd($data);
+        return view('/post',$data);
     }
 
     /**
