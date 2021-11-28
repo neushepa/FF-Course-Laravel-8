@@ -15,7 +15,7 @@ class BlogController extends Controller
     {
         $data = [
             'title' => 'Blog List',
-            'post' => Post::get()
+            'post' => Post::orderBy('created_at','desc')->get()
         ];
         //dd($data);
         return view('/blog',$data);

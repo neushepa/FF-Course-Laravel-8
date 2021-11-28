@@ -9,7 +9,7 @@
             <h5>Author : {{ $post->user->name }}</h5>
             </div>
             <div class="card-body">
-            <p>{{ $post->body }}</p>
+            <p>{!! $post->body !!}</p>
             </div>
         </div>
 </div>

@@ -28,7 +28,13 @@ class PostController extends Controller
      */
     public function create()
     {
-        dd('create post form');
+        //dd('create post form');
+        $data = [
+            'title' => 'New Post',
+            'method' => 'POST',
+            'route' => route('post.store')
+        ];
+        return view('admin.post.editor',$data);
     }
 
     /**
@@ -39,7 +45,17 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //dd($request->all());
+        $post = new Post;
+        $user_id = auth()->user()->id;
+
+        $post->user_id = $user_id;
+        $post->title = $request->title;
+        $post->slug = $request->slug;
+        $post->expert = $request->expert;
+        $post->body = $request->body;
+        $post->save();
+        return redirect()->route('post.index');
     }
 
     /**
@@ -66,7 +82,16 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        dd('edit post form');
+
+        $data = [
+            'title' => 'Edit Post',
+            'method' => 'PUT',
+            'route' => route('post.update',$id),
+            'post'=>Post::where('id',$id)->first()
+        ];
+        //dd($data);
+        return view('admin.post.editor',$data);
+
     }
 
     /**
@@ -78,7 +103,18 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $post= Post::find($id);
+        $user_id = auth()->user()->id;
+
+        $post->user_id = $user_id;
+        $post->title = $request->title;
+        $post->slug = $request->slug;
+        $post->expert = $request->expert;
+        $post->body = $request->body;
+        $post->update();
+        return redirect()->route('post.index');
+        //dd($request, $id);
     }
 
     /**

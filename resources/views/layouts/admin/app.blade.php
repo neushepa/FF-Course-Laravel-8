@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
   <!-- CSS Libraries -->
+  <!-- <link rel="stylesheet" href="../../admin/assets/css/summernote-bs4.css"> -->
+  <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 
   <!-- Template CSS -->
   <link rel="stylesheet" href="../../admin/assets/css/style.css">
@@ -43,6 +45,8 @@
   <script src="../../admin/assets/js/stisla.js"></script>
 
   <!-- JS Libraies -->
+  <!-- include summernote css/js -->
+  <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 
   <!-- Template JS File -->
   <script src="../../admin/assets/js/scripts.js"></script>
