@@ -15,8 +15,8 @@ class PostController extends Controller
     {
             $data = [
                 'title' => 'List Post',
-                'posts' => post::get()
-                //'route' => route('post.create')
+                'posts' => post::get(),
+                'route' => route('post.create')
             ];
             return view('admin.post.index',$data);
     }
@@ -66,7 +66,7 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+        dd('edit post form');
     }
 
     /**
@@ -89,6 +89,9 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //dd('Destroy post');
+        $destroy = Post::where('id', $id);
+        $destroy->delete();
+        return redirect(route("post.index"));
     }
 }

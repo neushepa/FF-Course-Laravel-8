@@ -5,7 +5,7 @@
           <div class="section-header">
             <h1>Posts</h1>
             <div class="section-header-button">
-              <a href="" class="btn btn-primary">Add New</a>
+              <a href="{{ $route }}" class="btn btn-primary">Add New</a>
             </div>
             <div class="section-header-breadcrumb">
               <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
@@ -45,7 +45,15 @@
                         <tbody>
                         @foreach ($posts as $ps)
                             <tr>
-                                <td>{{ $ps->title }}</td>
+                                <td>{{ $ps->title }}<div class="table-links">
+                              <a href="{{ route('post.edit',$ps->id) }}">Edit</a>
+                              <div class="bullet"></div>
+                              <a href="#" onclick="event.preventDefault(); $('#destroy-{{ $ps->id }}').submit()">Delete</a>
+                              <form id="destroy-{{ $ps->id }}" action="{{ route('post.destroy',$ps->id) }}" method="POST">
+                                  @csrf
+                                  @method('DELETE')
+                                </form>
+                            </div></td>
                                 <td>{{ $ps->slug }}</td>
                                 <td>{{ $ps->expert }}</td>
                                 <td>{{ $ps->created_at }}</td>
