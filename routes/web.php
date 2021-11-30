@@ -20,7 +20,7 @@ Route::get('/', function () {
     $data = [
         'greeting' => 'Selamat Datang di Starter Kits',
     ];
-    return view('home',$data);
+    return view('home', $data);
 });
 
 Route::get('/blog', BlogController::class . '@index');
@@ -35,7 +35,7 @@ Route::get('/about', function () {
         'name' => 'Rio Andrianto',
         'email' => 'r.andrianto@gmail.com',
     ];
-    return view('about',$data);
+    return view('about', $data);
 });
 
 Route::get('/credit', function () {
@@ -44,9 +44,9 @@ Route::get('/credit', function () {
         'body' => 'Herzlich Willkommen',
 
     ];
-    return view('admin.credit',$data);
+    return view('admin.credit', $data);
 });
 
 Auth::routes();
 
-Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('dashboard');
